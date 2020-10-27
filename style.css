@@ -1,0 +1,56 @@
+#index-csl {
+    margin-top: -2.3%;
+    height: 58%;
+
+}
+.carousel-item {
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+}
+
+.shopping { 
+    background-image: url(img1/ocean.jpeg);
+    display: block;
+    background-size: cover;
+    margin-top: -2%;
+}
+
+#top-c {
+    margin-top: 2%;
+}
+
+#bottom-c {
+    
+}
+
+#shop-bottom {
+    margin-top: -2%;
+}
+
+/* map */
+
+.map {
+    width: 100%;
+    height:400px;
+  }
+  
+/* end map */
+
+/* typing animation */
+
+#type-shop {
+  font-size: 5em;
+}
+
+span {
+  border-right: .05em solid;
+  animation: caret 1s steps(1) infinite;
+}
+
+@keyframes caret {
+  50% {
+    border-color: transparent;
+  }
+}
+/* end typing animation */
