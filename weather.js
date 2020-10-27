@@ -1,90 +1,92 @@
 // map
-import 'ol/ol.css';
-import Feature from 'ol/Feature';
-import Geolocation from 'ol/Geolocation';
-import Map from 'ol/Map';
-import Point from 'ol/geom/Point';
-import View from 'ol/View';
-import {Circle as CircleStyle, Fill, Stroke, Style} from 'ol/style';
-import {OSM, Vector as VectorSource} from 'ol/source';
-import {Tile as TileLayer, Vector as VectorLayer} from 'ol/layer';
-
-var view = new View({
-  center: [0, 0],
-  zoom: 2,
-});
-
-var map = new Map({
-  layers: [
-    new TileLayer({
-      source: new OSM(),
-    }) ],
-  target: 'map',
-  view: view,
-});
-
-var geolocation = new Geolocation({
-  // enableHighAccuracy must be set to true to have the heading value.
-  trackingOptions: {
-    enableHighAccuracy: true,
-  },
-  projection: view.getProjection(),
-});
-
-function el(id) {
-  return document.getElementById(id);
+function initMap(){
+  // map options
+    var options = {
+    zoom:3,
+    center:{
+      lat:37.0902, lng:-95.7129
+    }
 }
+  // new map
+    var map = new 
+    google.maps.Map(document.getElementById('map'), options);
 
-el('track').addEventListener('change', function () {
-  geolocation.setTracking(this.checked);
-});
+    // listen for click on map
+    google.maps.event.addListener(map, 'click', function(event){
+      // add marker
+      addMarker({coords:event.latLng});
+    });
 
-// update the HTML page when the position changes.
-geolocation.on('change', function () {
-  el('accuracy').innerText = geolocation.getAccuracy() + ' [m]';
-  el('altitude').innerText = geolocation.getAltitude() + ' [m]';
-  el('altitudeAccuracy').innerText = geolocation.getAltitudeAccuracy() + ' [m]';
-  el('heading').innerText = geolocation.getHeading() + ' [rad]';
-  el('speed').innerText = geolocation.getSpeed() + ' [m/s]';
-});
+    // array of markers
 
-// handle geolocation error.
-geolocation.on('error', function (error) {
-  var info = document.getElementById('info');
-  info.innerHTML = error.message;
-  info.style.display = '';
-});
+    let markers = [
+      {
+        coords:{lat:33.7490, lng:-84.3880},
+        // iconImage:'';
+        content:'<h1>Atlanta, GA</h1>'
+      },
 
-var accuracyFeature = new Feature();
-geolocation.on('change:accuracyGeometry', function () {
-  accuracyFeature.setGeometry(geolocation.getAccuracyGeometry());
-});
+    ];
 
-var positionFeature = new Feature();
-positionFeature.setStyle(
-  new Style({
-    image: new CircleStyle({
-      radius: 6,
-      fill: new Fill({
-        color: '#3399CC',
-      }),
-      stroke: new Stroke({
-        color: '#fff',
-        width: 2,
-      }),
-    }),
-  })
-);
+    // loop through markers 
+      for(var i = 0; i < markers.length; i++){
+        addMarker(markers[i]);
+      }
+    
+    // add marker function
+    function addMarker(props){
+            let marker = new google.maps.Marker({
+      position:props.coords,
+      map:map,
+      // personalized icon
+      // icon:props.iconImage
+    });
 
-geolocation.on('change:position', function () {
-  var coordinates = geolocation.getPosition();
-  positionFeature.setGeometry(coordinates ? new Point(coordinates) : null);
-});
+      // check for icon image
+      if(props.iconImage){
+        // set icon image
+        marker.setIcon(props.iconImage);
 
-new VectorLayer({
-  map: map,
-  source: new VectorSource({
-    features: [accuracyFeature, positionFeature],
-  }),
-});
+      }
+
+      if(props.content){
+
+        var infoWindow = new google.maps.infoWindow({
+
+          content:props.content
+
+        });
+
+      };
+
+
+    };
+
+      marker.addListener('click', function(){
+
+      infoWindow.open(map, marker);
+
+    });
+}
 // end map
+
+// js for map add form
+  // Example starter JavaScript for disabling form submissions if there are invalid fields
+  (function() {
+    'use strict';
+    window.addEventListener('load', function() {
+      // Fetch all the forms we want to apply custom Bootstrap validation styles to
+      var forms = document.getElementsByClassName('needs-validation');
+      // Loop over them and prevent submission
+      var validation = Array.prototype.filter.call(forms, function(form) {
+        form.addEventListener('submit', function(event) {
+          if (form.checkValidity() === false) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+          form.classList.add('was-validated');
+        }, false);
+      });
+    }, false);
+  })();
+  // end js for map add form
