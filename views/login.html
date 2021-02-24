@@ -2,21 +2,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/style/login.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
      integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <title>THE SURFER</title>
     <!-- favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="img1/favicon_io (1)/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="img1/favicon_io (1)/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="img1/favicon_io (1)/favicon-16x16.png">
-    <link rel="manifest" href="img1/favicon_io (1)/site.webmanifest">
+    <link rel="apple-touch-icon" sizes="180x180" href="../img1/favicon_io (1)/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../img1/favicon_io (1)/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../img1/favicon_io (1)/favicon-16x16.png">
+    <link rel="manifest" href="../img1/favicon_io (1)/site.webmanifest">
     <!-- end favicon -->
 </head>
 <body>
+
 <!--==top nav==-->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="index.html">THE SURFER</a>
+    <a class="navbar-brand" href="/views/index.html">THE SURFER</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -25,16 +26,16 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a class="nav-link" href="index.html">HOME<span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="/views/index.html">HOME<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="login.html">LOGIN</a>
+          <a class="nav-link" href="/views/login.html">LOGIN</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="weather.html">WEATHER</a>
+          <a class="nav-link" href="/views/weather.html">WEATHER</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="shop.html">SHOP</a>
+          <a class="nav-link" href="/views/shop.html">SHOP</a>
         </li>
       </ul>
       <form class="form-inline my-2 my-lg-0">
@@ -46,7 +47,7 @@
 <!-- end top nav --> 
 
 <!-- jumbo email -->
-<div class="jumbotron jumbotron-fluid bg-light">
+<div id="email-form" class="jumbotron jumbotron-fluid bg-light">
     <div class="container">
       <h1 class="display-4 text-center">Catch the swell daily.</h1>
       <p class="lead">
@@ -116,7 +117,7 @@
                     </label>
                   </div>
                 </div>
-                <button type="submit" class="btn btn-light"><a href="index.html">Sign me up!</a></button>
+                <button type="submit" class="btn btn-light"><a href="/views/index.html">Sign me up!</a></button>
               </form>
             </div>
           </div>
@@ -128,7 +129,7 @@
 
 <!-- bottom -->
 <div class="bottom-nav">
-  <div class="jumbotron jumbotron-fluid bg-dark">
+  <div id="foot-jumbo" class="jumbotron jumbotron-fluid bg-dark">
       <div class="container">
         <h1 class="display-4 text-light text-center">THE SURFER</h1>
         <div class="d-flex justify-content-around">
@@ -145,7 +146,7 @@
   </div>
 <!-- end bottom -->
 
-<script src="script.js"></script>
+<script src="/scripts/script.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
  integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"

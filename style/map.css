@@ -1,0 +1,32 @@
+#title {
+    margin-bottom: -1%;
+}
+
+#map-jumbo {
+    margin-bottom: -1%;
+    padding: 5%;
+}
+
+#location-form {
+    margin-top: 1%;
+}
+  
+#addition-form {
+    margin-top: 1%;
+}
+  
+#formControlRange {
+    width: 49%;
+}
+
+#map {
+    margin-left: 12%;
+    margin-top: 6%;
+    margin-bottom: 2%;
+    height: 75%;
+    width: 75%;
+}
+
+#foot-jumbo {
+    margin-bottom: -1%;
+}

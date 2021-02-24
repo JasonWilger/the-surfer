@@ -1,0 +1,14 @@
+.shopping { 
+  background-image: url(../img1/ocean.jpeg);
+  background-size: cover;
+  padding-bottom: 4%;
+  margin-top: -2%;
+}
+
+#top-c {
+  margin-top: 6%;
+}
+
+#foot-jumbo {
+  margin-bottom: -1%;
+}

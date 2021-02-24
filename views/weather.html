@@ -2,33 +2,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/style/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
      integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <title>THE SURFER</title>
 
     <!-- favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="img1/favicon_io (1)/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="img1/favicon_io (1)/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="img1/favicon_io (1)/favicon-16x16.png">
-    <link rel="manifest" href="img1/favicon_io (1)/site.webmanifest">
+    <link rel="apple-touch-icon" sizes="180x180" href="../img1/favicon_io (1)/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../img1/favicon_io (1)/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../img1/favicon_io (1)/favicon-16x16.png">
+    <link rel="manifest" href="../img1/favicon_io (1)/site.webmanifest">
     <!-- end favicon -->
 
     <script src="https://unpkg.com/elm-pep"></script>
 
     <!-- map -->
-      <style>
-        #map{
-          height: 400px;
-          width: 100%;
-        }
-      </style>
+      <link rel="stylesheet" href="/style/map.css">
     <!-- end map -->
 </head>
 <body>
+
 <!--==top nav==-->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="index.html">THE SURFER</a>
+    <a class="navbar-brand" href="/views/index.html">THE SURFER</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" 
     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
     aria-expanded="false" aria-label="Toggle navigation">
@@ -38,16 +34,16 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a class="nav-link" href="index.html">HOME<span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="/views/index.html">HOME<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="login.html">LOGIN</a>
-          </li>
-        <li class="nav-item">
-          <a class="nav-link" href="weather.html">WEATHER</a>
+          <a class="nav-link" href="/views/login.html">LOGIN</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="shop.html">SHOP</a>
+          <a class="nav-link" href="/views/weather.html">WEATHER</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/views/shop.html">SHOP</a>
         </li>
       </ul>
       <form class="form-inline my-2 my-lg-0">
@@ -59,7 +55,7 @@
 <!-- end top nav -->
 
 <!-- jumbo -->
-<div class="jumbotron jumbotron-fluid bg-light">
+<div id="title" class="jumbotron jumbotron-fluid bg-light">
     <div class="container">
       <h1 class="display-4 text-center">Don't go unprepared</h1>
       <br>
@@ -68,9 +64,8 @@
   </div>
 <!-- end jumbo -->
 
-<!-- map -->
+<!-- map form -->
 <div id="map-jumbo" class="jumbotron jumbotron-fluid">
-  <div class="container">
     <ul class="nav nav-tabs" id="myTab" role="tablist">
       <li class="nav-item" role="presentation">
         <a class="nav-link active text-info" id="home-tab" data-toggle="tab"
@@ -110,14 +105,14 @@
           <div class="form-row">
             <div class="col-md-6 mb-3">
               <label for="validationCustom01">First name</label>
-              <input type="text" class="form-control" id="validationCustom01" value="Surfer" required>
+              <input type="text" class="form-control" id="validationCustom01" value="Robert" required>
               <div class="valid-feedback">
                 Looks good!
               </div>
             </div>
             <div class="col-md-6 mb-3">
               <label for="validationCustom02">Last name</label>
-              <input type="text" class="form-control" id="validationCustom02" value="John" required>
+              <input type="text" class="form-control" id="validationCustom02" value="Slater" required>
               <div class="valid-feedback">
                 Looks good!
               </div>
@@ -160,17 +155,19 @@
         </form>
       </div>
       <!-- end form for add -->
-    </div>
+    </div >
 
-    <div id="map">
-      <!-- the map is passed in through this div -->
-    </div>
+<!-- map -->
+  <div id="map">
+    <!-- the map is passed in through this div -->
   </div>
+</div>
+
 <!-- end map -->
 
 <!-- bottom -->
 <div class="bottom-nav">
-<div class="jumbotron jumbotron-fluid bg-dark">
+<div id="foot-jumbo" class="jumbotron jumbotron-fluid bg-dark">
     <div class="container">
       <h1 class="display-4 text-light text-center">THE SURFER</h1>
       <div class="d-flex justify-content-around">
@@ -187,17 +184,20 @@
 </div>
   <!-- end bottom -->
 
+<!-- scripts -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" 
 integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" 
 integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-
-</body>
 <!-- map script -->
-<script src="weather.js"></script>
+<script src="/scripts/map.js"></script>
+<script src="/scripts/weather.js"></script>
 <script
 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCdHFyEoMEYdFbBU2WlBoPhu4o3xnCF98U&callback=initMap&libraries=&v=weekly"
 defer
 ></script>
 <!-- end map script -->
+<!-- end scripts -->
+
+</body>
 </html>
