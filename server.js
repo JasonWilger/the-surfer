@@ -1,7 +1,10 @@
-const express = require('express');
+const express = require('express')
+const app = express()
+const port = 5000
 
-const app = express();
 app.use(express.static('public'))
+app.use(express.static('views'))
 
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log('Server running on port 5000!'));
+app.listen(port, () => {
+  console.log(`App listening on PORT ${port}`)
+})
