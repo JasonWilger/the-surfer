@@ -1,0 +1,24 @@
+{
+  "name": "the-surfer",
+  "version": "1.0.0",
+  "description": "The Surfer is a website that will provide access to recent wether updates in the area where a zipcode was provided.  It will also have a blog for people to diciss surfing hotspots and links to sites where surfing gear can be purchased.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JasonWilger/the-surfer.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JasonWilger/the-surfer/issues"
+  },
+  "homepage": "https://github.com/JasonWilger/the-surfer#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
